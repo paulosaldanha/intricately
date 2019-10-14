@@ -1,0 +1,143 @@
+$font-stack: Helvetica, sans-serif;
+$button-primary-color:#1E90FF;
+
+$spacing: 1em;
+$color__primary: #1874CD;
+
+
+/*------------------------------------*\
+    NAV
+\*------------------------------------*/
+.nav {
+    float: right; /* Clear floats */
+    top: -1em;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    margin-bottom: $spacing;
+    list-style: none;
+    font-weight: bold;
+    background: $color__primary;
+}
+
+.nav li {
+    position: relative;
+    float: left;
+    margin-right: $spacing;
+}
+
+.nav a {
+    display: block;
+    padding: $spacing $spacing/3;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color: #fff;
+    background: darken($color__primary, 5%);
+}
+
+/*--- DROPDOWN ---*/
+.nav__sub-menu {
+    background: rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+    list-style: none;
+    position: absolute;
+    left: -9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+}
+
+.nav__sub-menu li {
+    float: none;
+}
+
+.nav__sub-menu a {
+    white-space: nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+
+.nav li:hover ul{ /* Display the dropdown on hover */
+    left: 0; /* Bring back on-screen when needed */
+}
+
+.nav li:hover a { /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+    background: darken($color__primary, 10%);
+}
+
+.nav li:hover ul li a:hover { /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+    background: $color__primary;
+}
+
+/*
+ * Left hand-menu
+*/
+/* The side navigation menu */
+.sidemenu {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #fff;
+    position: fixed;
+    overflow: auto;
+    top: 6em;
+  }
+  
+  /* Sidebar links */
+  .sidemenu a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  /* Links on mouse-over */
+.sidemenu a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+
+  /*
+  *  BreadCrumb
+  */
+  /* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    margin-top: 50px;
+  }
+  
+  /* Display list items side by side */
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+  
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+  
+  /* Add a color to all links inside the list */
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+  
+  /* Add a color on mouse-over */
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+
+  /*
+  * Footer
+  */
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #F0FFFF;
+    color: #D3D3D3;
+    text-align: center;
+  }
