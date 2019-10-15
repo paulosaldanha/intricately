@@ -64,10 +64,15 @@
             <li>Company Data</li>
         </ul>
         <div class="sidemenu">
-            <a href="">Company Data</a>
-            <a href="">Company Table</a>
-            <a href="">Company Page</a>
+            <router-link :to="'/data'">Home</router-link>
+            <router-link :to="{path: 'data'}">Home</router-link>
+            <router-link :to="{name: 'data'}">Home</router-link>
+            <router-link to="/data">Company Data</router-link>
+            <router-link to="/page">Company Page</router-link>
         </div>
+
+        <router-view></router-view>
+
         <div class="footer">
             <p>Footer</p>
         </div>
